@@ -30,6 +30,7 @@ namespace Contoso
             services.AddRazorPages();
             services.AddControllers();
             services.AddTransient<ContosoCrafts.Services.JsonFileProductService>();
+            services.AddServerSideBlazor();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +58,7 @@ namespace Contoso
             {
                 endpoints.MapRazorPages();
                 endpoints.MapControllers();
+                endpoints.MapBlazorHub();
                 //endpoints.MapGet("/products", (context) => {
                 //    var products = app.ApplicationServices.GetService<JsonFileProductService>().GetProducts();
                 //    var json = JsonSerializer.Serialize<IEnumerable<Product>>(products);
